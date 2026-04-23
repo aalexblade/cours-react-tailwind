@@ -18,7 +18,7 @@ function App() {
         <button className="border-2 border-green-600 text-green-400 px-8 py-2 m-4 rouded-md">
           first
         </button>
-        <button className="rounded-lg bg-sky-500 text-white px-10 py-4 text-3xl hover:m-4 cursor-pointer">
+        <button className="rounded-lg bg-sky-500 text-white px-10 py-4 text-3xl hover:text-base m-4 cursor-pointer">
           second
         </button>
         <button className="bg-violet-100 text-violet-600 px-8 py-4 rounded-full m-4">
