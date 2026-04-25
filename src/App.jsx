@@ -9,27 +9,27 @@ function App() {
       <FancyButton large>submit</FancyButton>
 
       <div>
-        <div className="flex justify-center h-64 p-4 m-4 border-2 border-blue-400">
+        <div className="flex justify-center h-64 p-4 m-4 border-2 border-blue-800">
           <Cat />
           <Cat />
           <Cat />
         </div>
-        <div className="flex justify-between h-64 p-4 m-4 border-2 border-red-400">
+        <div className="flex justify-between h-64 p-4 m-4 border-2 border-red-200">
           <Cat />
           <Cat />
           <Cat />
         </div>
-        <div className="flex justify-center items-center h-64 p-4 m-4 border-2 border-green-400 ">
+        <div className="flex justify-center items-center h-64 p-4 m-4 border-2 border-green-600 ">
           <Cat />
           <Cat />
           <Cat />
         </div>
-        <div className="flex justify-around items-end h-64 p-4 m-4 border-2 border-purple-400">
+        <div className="flex justify-around items-end h-64 p-4 m-4 border-2 border-purple-500">
           <Cat />
           <Cat />
           <Cat />
         </div>
-        <div className="flex justify-between items-center h-64 p-4 m-4 border-2 border-orange-400">
+        <div className="flex justify-between items-center h-64 p-4 m-4 border-2 border-orange-600">
           <Cat />
           <Cat />
           <Cat />
