@@ -1,6 +1,6 @@
 import "./App.css";
-import FancyButton from "./components/FancyButton";
-import Cat from "./components/Cat";
+// import FancyButton from "./components/FancyButton";
+// import Cat from "./components/Cat";
 
 import QouteBoxes1 from "./components/QuoteBoxes1";
 
@@ -29,7 +29,7 @@ function App() {
         <QuoteBox1 quote={quote1} />
       </div>
 
-      <FancyButton>click me</FancyButton>
+      {/* <FancyButton>click me</FancyButton>
       <FancyButton large>submit</FancyButton>
 
       <div>
@@ -58,7 +58,7 @@ function App() {
           <Cat />
           <Cat />
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
