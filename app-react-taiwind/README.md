@@ -28,3 +28,9 @@ items-stretch
 items-start
 items-end
 items-center
+
+### Current Progress
+- Clean project structure with Tailwind 4.
+- TypeScript config fixed (moduleResolution: bundler).
+- Hero and Button components ready.
+- Coffee data structure implemented.
