@@ -4,7 +4,7 @@ import { shopLocation } from "../../data/coffee-data";
 
 export const Location: FC = () => {
   return (
-    <section className="py-20 px-6 bg-coffee-dark text-cream">
+    <section id="location" className="py-20 px-6 bg-coffee-dark text-cream">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-8">
           <h2 className="text-4xl font-serif font-bold">Visit Our Shop</h2>
