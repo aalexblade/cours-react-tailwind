@@ -12,4 +12,14 @@
 :root {
   background-color: var(--color-cream);
   color: var(--color-coffee-dark);
+  scroll-behavior: smooth;
+}
+
+button, 
+a, 
+select, 
+input[type="submit"], 
+input[type="button"], 
+input[type="reset"] {
+  cursor: pointer;
 }

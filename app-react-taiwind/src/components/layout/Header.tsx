@@ -42,7 +42,7 @@ export const Header: FC = () => {
         damping: 30,
       },
     },
-  };
+  } as const;
 
   return (
     <motion.header
@@ -70,7 +70,7 @@ export const Header: FC = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-coffee-dark font-medium hover:text-coffee-light transition-colors"
+              className="text-coffee-dark font-medium hover:text-coffee-light transition-colors cursor-pointer"
             >
               {link.name}
             </a>
@@ -79,14 +79,19 @@ export const Header: FC = () => {
 
         {/* Right Actions */}
         <div className="flex items-center gap-4 z-50">
-          <Button variant="primary" className="hidden sm:block">
-            Order Now
-          </Button>
+          <a href="#contact" className="hidden sm:block">
+            <Button 
+              variant="primary" 
+              className="hover:scale-105 hover:shadow-[0_0_20px_rgba(44,24,16,0.3)] transition-all"
+            >
+              Order Now
+            </Button>
+          </a>
           
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-coffee-dark hover:bg-coffee-dark/5 rounded-lg transition-colors"
+            className="md:hidden p-2 text-coffee-dark hover:bg-coffee-dark/5 rounded-lg transition-colors cursor-pointer"
             aria-label="Toggle Menu"
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -109,14 +114,19 @@ export const Header: FC = () => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-3xl font-serif font-bold text-coffee-dark hover:text-coffee-light transition-colors"
+                className="text-3xl font-serif font-bold text-coffee-dark hover:text-coffee-light transition-colors cursor-pointer"
               >
                 {link.name}
               </a>
             ))}
-            <Button variant="primary" className="mt-4 px-8 py-3 text-lg">
-              Order Now
-            </Button>
+            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+              <Button 
+                variant="primary" 
+                className="mt-4 px-8 py-3 text-lg hover:scale-105 hover:shadow-lg transition-all"
+              >
+                Order Now
+              </Button>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>

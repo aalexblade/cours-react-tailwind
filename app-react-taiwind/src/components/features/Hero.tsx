@@ -34,15 +34,25 @@ export const Hero: FC = () => {
           </p>
           
           <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-            <motion.div whileHover={{ scale: 1.05 }}>
-              <Button variant="primary" className="px-8 py-4 text-lg">
-                View Menu
-              </Button>
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <a href="#menu" aria-label="View our coffee menu">
+                <Button variant="primary" className="px-8 py-4 text-lg">
+                  View Menu
+                </Button>
+              </a>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }}>
-              <Button variant="outline" className="px-8 py-4 text-lg">
-                Our Story
-              </Button>
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <a href="#features" aria-label="Read our story and learn about our process">
+                <Button variant="outline" className="px-8 py-4 text-lg hover:bg-coffee-dark/5 hover:text-coffee-dark border-coffee-dark/20">
+                  Our Story
+                </Button>
+              </a>
             </motion.div>
           </div>
         </motion.div>
