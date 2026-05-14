@@ -3,6 +3,7 @@ import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Hero from "./components/features/Hero";
 import Features from "./components/features/Features";
+import Testimonials from "./components/features/Testimonials";
 import Menu from "./components/features/Menu";
 import Contact from "./components/features/Contact";
 import Location from "./components/features/Location";
@@ -22,6 +23,10 @@ const App: React.FC = () => {
 
           <FadeIn delay={0.2}>
             <Menu />
+          </FadeIn>
+
+          <FadeIn delay={0.1}>
+            <Testimonials />
           </FadeIn>
 
           <FadeIn>

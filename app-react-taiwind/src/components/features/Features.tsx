@@ -21,20 +21,20 @@ const features = [
 
 export const Features: FC = () => {
   return (
-    <section id="features" className="py-24 px-6 bg-white">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section id="features" className="py-32 px-6 bg-[#FDFCFB]">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         {features.map((feature, index) => (
           <div
             key={index}
-            className="flex flex-col items-center text-center p-8 border border-coffee-dark/5 rounded-2xl bg-cream/10 hover:bg-cream/20 transition-colors"
+            className="group flex flex-col items-center text-center p-12 bg-transparent border border-coffee-dark/10 rounded-[2rem] hover:bg-coffee-light/5 transition-all duration-500"
           >
-            <div className="w-12 h-12 flex items-center justify-center rounded-full bg-coffee-light/10 text-coffee-medium mb-6">
-              <feature.icon size={24} />
+            <div className="w-20 h-20 flex items-center justify-center rounded-full bg-coffee-medium/10 text-coffee-medium mb-8 group-hover:scale-110 transition-transform duration-500">
+              <feature.icon size={36} />
             </div>
-            <h3 className="text-xl font-serif font-bold text-coffee-dark mb-4">
+            <h3 className="text-2xl font-serif font-bold text-coffee-dark mb-4">
               {feature.title}
             </h3>
-            <p className="text-coffee-medium leading-relaxed">
+            <p className="text-coffee-dark/80 leading-relaxed">
               {feature.description}
             </p>
           </div>
