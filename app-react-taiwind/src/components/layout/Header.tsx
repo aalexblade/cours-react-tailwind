@@ -1,136 +1,98 @@
 import React, { FC, useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
-import Button from "../ui/Button";
+import { Coffee, Menu, X } from "lucide-react";
 
 export const Header: FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const updateScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
-    window.addEventListener("scroll", updateScroll);
-    return () => window.removeEventListener("scroll", updateScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
     { name: "Home", href: "#hero" },
-    { name: "Features", href: "#features" },
+    { name: "About Us", href: "#features" },
     { name: "Menu", href: "#menu" },
-    { name: "Contact", href: "#contact" },
     { name: "Location", href: "#location" },
+    { name: "Contact", href: "#contact" },
   ];
 
-  const menuVariants = {
-    closed: {
-      opacity: 0,
-      y: "-100%",
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 30,
-      },
-    },
-    opened: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 30,
-      },
-    },
-  } as const;
-
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 h-20 transition-all duration-300 ${
-        isScrolled || isMobileMenuOpen
-          ? "bg-white/80 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
+    <header
+      className={`fixed top-0 left-0 w-full z-100 transition-all duration-500 ${
+        isScrolled
+          ? "bg-[#fdfbf7]/90 backdrop-blur-md shadow-xs py-4 border-b border-[#0d0c0b]/5"
+          : "bg-transparent py-6"
       }`}
     >
-      <div className="max-w-7xl mx-auto h-full flex items-center justify-between px-6 md:px-12">
-        {/* Logo */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+       
         <a 
           href="#hero" 
-          className="text-2xl font-serif font-bold text-coffee-dark tracking-wider z-50"
-          onClick={() => setIsMobileMenuOpen(false)}
+          className={`flex items-center gap-2.5 font-serif font-bold text-xl tracking-tight transition-colors duration-500 ${
+            isScrolled ? "text-[#0d0c0b]" : "text-[#F5F2ED]"
+          }`}
         >
-          COFFEE HOUSE
+          <Coffee size={22} className="text-[#c49a6c]" />
+          <span>401 <span className="font-sans font-light text-xs tracking-widest uppercase opacity-60">Kyiv</span></span>
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+   
+        <nav className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-coffee-dark font-medium hover:text-coffee-light transition-colors cursor-pointer"
+              className={`text-xs font-semibold uppercase tracking-[0.25em] transition-all duration-500 relative group ${
+                isScrolled 
+                  ? "text-[#0d0c0b]/80 hover:text-[#0d0c0b]" 
+                  : "text-[#F5F2ED] hover:text-[#c49a6c]" 
+              }`}
             >
               {link.name}
+            
+              <span className={`absolute -bottom-1 left-0 w-0 h-px transition-all duration-300 group-hover:w-full ${
+                isScrolled ? "bg-[#0d0c0b]" : "bg-[#c49a6c]"
+              }`} />
             </a>
           ))}
         </nav>
 
-        {/* Right Actions */}
-        <div className="flex items-center gap-4 z-50">
-          <a href="#contact" className="hidden sm:block">
-            <Button 
-              variant="primary" 
-              className="hover:scale-105 hover:shadow-[0_0_20px_rgba(44,24,16,0.3)] transition-all"
-            >
-              Order Now
-            </Button>
-          </a>
-          
-          {/* Mobile Menu Toggle */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-coffee-dark hover:bg-coffee-dark/5 rounded-lg transition-colors cursor-pointer"
-            aria-label="Toggle Menu"
-          >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
+        
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className={`md:hidden p-1 transition-colors duration-500 ${
+            isScrolled ? "text-[#0d0c0b]" : "text-[#F5F2ED]"
+          }`}
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial="closed"
-            animate="opened"
-            exit="closed"
-            variants={menuVariants}
-            className="fixed inset-0 top-20 bg-cream z-40 flex flex-col items-center justify-center gap-8 md:hidden"
-          >
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-3xl font-serif font-bold text-coffee-dark hover:text-coffee-light transition-colors cursor-pointer"
-              >
-                {link.name}
-              </a>
-            ))}
-            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
-              <Button 
-                variant="primary" 
-                className="mt-4 px-8 py-3 text-lg hover:scale-105 hover:shadow-lg transition-all"
-              >
-                Order Now
-              </Button>
+  
+      {isMobileMenuOpen && (
+        <div className="absolute top-full left-0 w-full bg-[#0d0c0b] border-t border-white/5 py-6 px-6 flex flex-col gap-5 md:hidden">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-[#F5F2ED] text-sm font-medium uppercase tracking-widest py-2 border-b border-white/5 last:border-0"
+            >
+              {link.name}
             </a>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.header>
+          ))}
+        </div>
+      )}
+    </header>
   );
 };
 

@@ -25,16 +25,18 @@ const App: React.FC = () => {
             <Menu />
           </FadeIn>
 
-          <FadeIn delay={0.1}>
+       
+
+          <FadeIn direction="left">
+            <Location />
+          </FadeIn>
+
+             <FadeIn delay={0.1}>
             <Testimonials />
           </FadeIn>
 
           <FadeIn>
             <Contact />
-          </FadeIn>
-
-          <FadeIn direction="left">
-            <Location />
           </FadeIn>
         </div>
       </main>

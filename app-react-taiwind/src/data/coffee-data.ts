@@ -1,21 +1,14 @@
 import { MenuItem } from "../types/menu";
 
 export const coffeeMenu: MenuItem[] = [
+  // --- Category: espresso ---
   {
     id: 1,
     name: "Kyiv Raf",
     description: "Our signature creamy coffee with a hint of lavender and local forest honey.",
     price: 95,
     image: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=400&h=300&fit=crop",
-    category: "Coffee",
-  },
-  {
-    id: 2,
-    name: "Filter Coffee",
-    description: "Single-origin beans from Ethiopia, brewed with precision via V60.",
-    price: 75,
-    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=400&h=300&fit=crop",
-    category: "Coffee",
+    category: "espresso",
   },
   {
     id: 3,
@@ -23,23 +16,7 @@ export const coffeeMenu: MenuItem[] = [
     description: "Double shot of espresso with silky micro-foam. A Kyiv favorite.",
     price: 85,
     image: "https://images.unsplash.com/photo-1536816579748-4fcb3f49a7f4?q=80&w=400&h=300&fit=crop",
-    category: "Coffee",
-  },
-  {
-    id: 4,
-    name: "Espresso Tonic",
-    description: "Refreshing combination of double espresso, premium tonic, and a slice of grapefruit.",
-    price: 110,
-    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?q=80&w=400&h=300&fit=crop",
-    category: "Coffee",
-  },
-  {
-    id: 5,
-    name: "Cold Brew",
-    description: "Steeped for 18 hours for a smooth, low-acidity chocolatey finish.",
-    price: 90,
-    image: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=400&h=300&fit=crop",
-    category: "Coffee",
+    category: "espresso",
   },
   {
     id: 6,
@@ -47,8 +24,52 @@ export const coffeeMenu: MenuItem[] = [
     description: "Perfect balance of espresso, steamed milk, and airy foam.",
     price: 80,
     image: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=400&h=300&fit=crop",
-    category: "Coffee",
+    category: "espresso",
   },
+
+  // --- Category: slow ---
+  {
+    id: 2,
+    name: "Filter Coffee",
+    description: "Single-origin beans from Ethiopia, brewed with precision via V60.",
+    price: 75,
+    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=400&h=300&fit=crop",
+    category: "slow",
+  },
+  {
+    id: 4,
+    name: "Espresso Tonic",
+    description: "Refreshing combination of double espresso, premium tonic, and a slice of grapefruit.",
+    price: 110,
+    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?q=80&w=400&h=300&fit=crop",
+    category: "slow",
+  },
+  {
+    id: 5,
+    name: "Cold Brew",
+    description: "Steeped for 18 hours for a smooth, low-acidity chocolatey finish.",
+    price: 90,
+    image: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=400&h=300&fit=crop",
+    category: "slow",
+  },
+
+  // --- Category: desserts ---
+  {
+    id: 7,
+    name: "Almond Croissant",
+    description: "Traditional double-baked French croissant filled with rich almond frangipane.",
+    price: 110,
+    image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=400&h=300&fit=crop",
+    category: "desserts",
+  },
+  {
+    id: 8,
+    name: "Basque Cheesecake",
+    description: "Crustless baked cheesecake with a scorched exterior and an ultra-creamy center.",
+    price: 130,
+    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=400&h=300&fit=crop",
+    category: "desserts",
+  }
 ];
 
 export const shopLocation = {
