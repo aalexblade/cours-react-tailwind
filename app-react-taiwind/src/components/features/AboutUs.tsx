@@ -47,7 +47,7 @@ const itemVariants: Variants = {
   },
 };
 
-export const Features: FC = () => {
+export const AboutUs: FC = () => {
   return (
     <section
       id="features"
@@ -144,4 +144,4 @@ export const Features: FC = () => {
   );
 };
 
-export default Features;
+export default AboutUs;
